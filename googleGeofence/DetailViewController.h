@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 

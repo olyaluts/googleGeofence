@@ -62,6 +62,7 @@ static NSString * const kClientId = @"559691642764.apps.googleusercontent.com";
     } else {
          NSLog(@"Received auth object %@", auth.accessToken);
          [self refreshInterfaceBasedOnSignIn];
+        [super performSegueWithIdentifier:@"mapSegue" sender:self];;
     }
 }
 
