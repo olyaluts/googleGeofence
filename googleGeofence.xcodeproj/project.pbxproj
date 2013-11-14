@@ -22,6 +22,16 @@
 		9AF31D7018355D740085DAF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D4F18355D740085DAF8 /* UIKit.framework */; };
 		9AF31D7818355D740085DAF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AF31D7618355D740085DAF8 /* InfoPlist.strings */; };
 		9AF31D7A18355D740085DAF8 /* googleGeofenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF31D7918355D740085DAF8 /* googleGeofenceTests.m */; };
+		9AF31D84183564BE0085DAF8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D83183564BE0085DAF8 /* AssetsLibrary.framework */; };
+		9AF31D86183564CA0085DAF8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D85183564CA0085DAF8 /* CoreLocation.framework */; };
+		9AF31D88183564D30085DAF8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D87183564D30085DAF8 /* CoreMotion.framework */; };
+		9AF31D8A183564E30085DAF8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D89183564E30085DAF8 /* CoreText.framework */; };
+		9AF31D8C183564EB0085DAF8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D8B183564EB0085DAF8 /* MediaPlayer.framework */; };
+		9AF31D8E183564F50085DAF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D8D183564F50085DAF8 /* Security.framework */; };
+		9AF31D90183565340085DAF8 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9AF31D8F183565340085DAF8 /* GooglePlus.bundle */; };
+		9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D911835653E0085DAF8 /* GoogleOpenSource.framework */; };
+		9AF31D941835655A0085DAF8 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D931835655A0085DAF8 /* GooglePlus.framework */; };
+		9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D95183568450085DAF8 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +66,16 @@
 		9AF31D7518355D740085DAF8 /* googleGeofenceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "googleGeofenceTests-Info.plist"; sourceTree = "<group>"; };
 		9AF31D7718355D740085DAF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9AF31D7918355D740085DAF8 /* googleGeofenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = googleGeofenceTests.m; sourceTree = "<group>"; };
+		9AF31D83183564BE0085DAF8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9AF31D85183564CA0085DAF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9AF31D87183564D30085DAF8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		9AF31D89183564E30085DAF8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9AF31D8B183564EB0085DAF8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9AF31D8D183564F50085DAF8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9AF31D8F183565340085DAF8 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
+		9AF31D911835653E0085DAF8 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleOpenSource.framework; sourceTree = "<group>"; };
+		9AF31D931835655A0085DAF8 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
+		9AF31D95183568450085DAF8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +83,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */,
+				9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */,
+				9AF31D8E183564F50085DAF8 /* Security.framework in Frameworks */,
+				9AF31D8C183564EB0085DAF8 /* MediaPlayer.framework in Frameworks */,
+				9AF31D8A183564E30085DAF8 /* CoreText.framework in Frameworks */,
+				9AF31D88183564D30085DAF8 /* CoreMotion.framework in Frameworks */,
+				9AF31D86183564CA0085DAF8 /* CoreLocation.framework in Frameworks */,
+				9AF31D84183564BE0085DAF8 /* AssetsLibrary.framework in Frameworks */,
 				9AF31D4E18355D740085DAF8 /* CoreGraphics.framework in Frameworks */,
 				9AF31D5018355D740085DAF8 /* UIKit.framework in Frameworks */,
 				9AF31D4C18355D740085DAF8 /* Foundation.framework in Frameworks */,
+				9AF31D941835655A0085DAF8 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +114,9 @@
 		9AF31D3F18355D740085DAF8 = {
 			isa = PBXGroup;
 			children = (
+				9AF31D931835655A0085DAF8 /* GooglePlus.framework */,
+				9AF31D911835653E0085DAF8 /* GoogleOpenSource.framework */,
+				9AF31D8F183565340085DAF8 /* GooglePlus.bundle */,
 				9AF31D5118355D740085DAF8 /* googleGeofence */,
 				9AF31D7318355D740085DAF8 /* googleGeofenceTests */,
 				9AF31D4A18355D740085DAF8 /* Frameworks */,
@@ -104,6 +136,13 @@
 		9AF31D4A18355D740085DAF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AF31D95183568450085DAF8 /* SystemConfiguration.framework */,
+				9AF31D8D183564F50085DAF8 /* Security.framework */,
+				9AF31D8B183564EB0085DAF8 /* MediaPlayer.framework */,
+				9AF31D89183564E30085DAF8 /* CoreText.framework */,
+				9AF31D87183564D30085DAF8 /* CoreMotion.framework */,
+				9AF31D85183564CA0085DAF8 /* CoreLocation.framework */,
+				9AF31D83183564BE0085DAF8 /* AssetsLibrary.framework */,
 				9AF31D4B18355D740085DAF8 /* Foundation.framework */,
 				9AF31D4D18355D740085DAF8 /* CoreGraphics.framework */,
 				9AF31D4F18355D740085DAF8 /* UIKit.framework */,
@@ -235,6 +274,7 @@
 			files = (
 				9AF31D6718355D740085DAF8 /* Images.xcassets in Resources */,
 				9AF31D5618355D740085DAF8 /* InfoPlist.strings in Resources */,
+				9AF31D90183565340085DAF8 /* GooglePlus.bundle in Resources */,
 				9AF31D5F18355D740085DAF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,10 +424,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/olyalutsyk/projects/googleGeofence,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
 				INFOPLIST_FILE = "googleGeofence/googleGeofence-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,10 +443,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/olyalutsyk/projects/googleGeofence,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
 				INFOPLIST_FILE = "googleGeofence/googleGeofence-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
