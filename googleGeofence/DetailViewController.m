@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
+#include <MailCore/MailCore.h>
 
 @interface DetailViewController ()
 {
@@ -54,6 +56,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    [self sendEmail];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -93,13 +96,51 @@
         // Fetch Current Location
         CLLocation *location = [locations objectAtIndex:0];
         // Initialize Region to Monitor
-        CLRegion *region = [[CLRegion alloc] initCircularRegionWithCenter:[location coordinate] radius:150.0 identifier:[[NSUUID UUID] UUIDString]];
+        CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:[location coordinate]
+                                                                     radius:5.0
+                                                                 identifier:[[NSUUID UUID] UUIDString]];
         // Start Monitoring Region
         [locationManager startMonitoringForRegion:region];
         [locationManager stopUpdatingLocation];
         // Update Table View
         self.geofence = region;
     }
+}
+
+-(void)sendEmail {
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    GTMOAuth2Authentication *auth = [app auth];
+    
+    MCOSMTPSession * smtpSession = [[MCOSMTPSession alloc] init];
+    [smtpSession setHostname:@"smtp.gmail.com"];
+    [smtpSession setPort:587];
+    [smtpSession setAuthType:MCOAuthTypeXOAuth2];
+    [smtpSession setOAuth2Token:[auth accessToken]];
+    [smtpSession setUsername:[auth userEmail]];
+    
+    NSLog(@"%@", [auth accessToken]);
+    
+    MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
+    [[builder header] setFrom:[MCOAddress addressWithDisplayName:@"Test Geofence" mailbox:[auth userEmail]]];
+    
+    MCOAddress *addr = [MCOAddress addressWithMailbox:[auth userEmail]]; // Sends email back to user
+    [[builder header] setTo:[NSArray arrayWithObject:addr]];
+    
+    [[builder header] setSubject:@"Hello from geofence test!"];
+    [builder setTextBody:@"User left initial geofence"];
+    
+    NSData * rfc822Data = [builder data];
+    MCOSMTPSendOperation *sendOperation = [smtpSession sendOperationWithData:rfc822Data];
+    
+    //[smtpSession setConnectionLogger:[[MCOConnectionLogger ;
+    
+    [sendOperation start:^(NSError *error) {
+        if(error) {
+            NSLog(@"Error sending email: %@", error);
+        } else {
+            NSLog(@"Successfully sent email!");
+        }
+    }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -109,8 +150,9 @@
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entered region");
 }
+
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-   NSLog(@"Exited region");
+    [self sendEmail];
 }
 
 - (void)didReceiveMemoryWarning

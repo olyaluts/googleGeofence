@@ -33,6 +33,8 @@
 		9AF31D941835655A0085DAF8 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D931835655A0085DAF8 /* GooglePlus.framework */; };
 		9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D95183568450085DAF8 /* SystemConfiguration.framework */; };
 		9AF31D981835747A0085DAF8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D971835747A0085DAF8 /* MapKit.framework */; };
+		9AF31DAC183585520085DAF8 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31DA41835851D0085DAF8 /* libMailCore-ios.a */; };
+		9AF31DAE1835855C0085DAF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31DAD1835855C0085DAF8 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9AF31D4718355D740085DAF8;
 			remoteInfo = googleGeofence;
+		};
+		9AF31DA11835851D0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA537169E772200778456;
+			remoteInfo = "static mailcore2 osx";
+		};
+		9AF31DA31835851D0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+		9AF31DA51835851D0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA78C169F259200778456;
+			remoteInfo = tests;
+		};
+		9AF31DA71835851D0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6A81B911706840C00882C15;
+			remoteInfo = "test-ios";
+		};
+		9AF31DA91835851D0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
+		9AF31DAF183585AB0085DAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +122,8 @@
 		9AF31D931835655A0085DAF8 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		9AF31D95183568450085DAF8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9AF31D971835747A0085DAF8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		9AF31DAD1835855C0085DAF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF31DAE1835855C0085DAF8 /* CFNetwork.framework in Frameworks */,
+				9AF31DAC183585520085DAF8 /* libMailCore-ios.a in Frameworks */,
 				9AF31D981835747A0085DAF8 /* MapKit.framework in Frameworks */,
 				9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */,
 				9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */,
@@ -117,6 +165,7 @@
 		9AF31D3F18355D740085DAF8 = {
 			isa = PBXGroup;
 			children = (
+				9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */,
 				9AF31D931835655A0085DAF8 /* GooglePlus.framework */,
 				9AF31D911835653E0085DAF8 /* GoogleOpenSource.framework */,
 				9AF31D8F183565340085DAF8 /* GooglePlus.bundle */,
@@ -139,6 +188,7 @@
 		9AF31D4A18355D740085DAF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AF31DAD1835855C0085DAF8 /* CFNetwork.framework */,
 				9AF31D971835747A0085DAF8 /* MapKit.framework */,
 				9AF31D95183568450085DAF8 /* SystemConfiguration.framework */,
 				9AF31D8D183564F50085DAF8 /* Security.framework */,
@@ -200,6 +250,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9AF31D9A1835851B0085DAF8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AF31DA21835851D0085DAF8 /* libMailCore.a */,
+				9AF31DA41835851D0085DAF8 /* libMailCore-ios.a */,
+				9AF31DA61835851D0085DAF8 /* tests */,
+				9AF31DA81835851D0085DAF8 /* test-ios.app */,
+				9AF31DAA1835851D0085DAF8 /* MailCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +276,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AF31DB0183585AB0085DAF8 /* PBXTargetDependency */,
 			);
 			name = googleGeofence;
 			productName = googleGeofence;
@@ -263,6 +326,12 @@
 			mainGroup = 9AF31D3F18355D740085DAF8;
 			productRefGroup = 9AF31D4918355D740085DAF8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9AF31D9A1835851B0085DAF8 /* Products */;
+					ProjectRef = 9AF31D991835851B0085DAF8 /* mailcore2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9AF31D4718355D740085DAF8 /* googleGeofence */,
@@ -270,6 +339,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9AF31DA21835851D0085DAF8 /* libMailCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMailCore.a;
+			remoteRef = 9AF31DA11835851D0085DAF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AF31DA41835851D0085DAF8 /* libMailCore-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMailCore-ios.a";
+			remoteRef = 9AF31DA31835851D0085DAF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AF31DA61835851D0085DAF8 /* tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tests;
+			remoteRef = 9AF31DA51835851D0085DAF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AF31DA81835851D0085DAF8 /* test-ios.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "test-ios.app";
+			remoteRef = 9AF31DA71835851D0085DAF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AF31DAA1835851D0085DAF8 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = 9AF31DA91835851D0085DAF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9AF31D4618355D740085DAF8 /* Resources */ = {
@@ -320,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = 9AF31D4718355D740085DAF8 /* googleGeofence */;
 			targetProxy = 9AF31D7118355D740085DAF8 /* PBXContainerItemProxy */;
+		};
+		9AF31DB0183585AB0085DAF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static mailcore2 ios";
+			targetProxy = 9AF31DAF183585AB0085DAF8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -428,6 +540,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/olyalutsyk/projects/googleGeofence,
@@ -435,7 +549,21 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
 				INFOPLIST_FILE = "googleGeofence/googleGeofence-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -447,6 +575,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/olyalutsyk/projects/googleGeofence,
@@ -454,7 +584,21 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
 				INFOPLIST_FILE = "googleGeofence/googleGeofence-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

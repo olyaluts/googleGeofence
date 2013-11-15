@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 static NSString * const kClientId = @"559691642764.apps.googleusercontent.com";
 
@@ -23,14 +24,15 @@ static NSString * const kClientId = @"559691642764.apps.googleusercontent.com";
 {
     [super viewDidLoad];
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
+    
+    
     signIn.shouldFetchGooglePlusUser = YES;
-    //signIn.shouldFetchGooleUserEmail = YES;  // Uncomment to get the user's email
+    signIn.shouldFetchGoogleUserEmail = YES;  // Uncomment to get the user's email
     
     // You previously set kClientId in the "Initialize the Google+ client" step
     signIn.clientID = kClientId;
-    signIn.scopes = [NSArray arrayWithObjects:
-                     kGTLAuthScopePlusLogin, // defined in GTLPlusConstants.h
-                     nil];
+    [signIn setScopes:[NSArray arrayWithObjects:@"https://mail.google.com/", kGTLAuthScopePlusLogin, kGTLAuthScopePlusMe, nil]];
+    
     // Optional: declare signIn.actions, see "app activities"
     signIn.delegate = self;
     [signIn trySilentAuthentication];
@@ -60,8 +62,11 @@ static NSString * const kClientId = @"559691642764.apps.googleusercontent.com";
     if (error) {
          NSLog(@"Received error %@", error);
     } else {
-         NSLog(@"Received auth object %@", auth.accessToken);
-         [self refreshInterfaceBasedOnSignIn];
+        AppDelegate *app = [[UIApplication sharedApplication] delegate];
+        [app setAuth:auth];
+        
+        NSLog(@"Received auth object %@", auth.accessToken);
+        [self refreshInterfaceBasedOnSignIn];
         [super performSegueWithIdentifier:@"mapSegue" sender:self];;
     }
 }
