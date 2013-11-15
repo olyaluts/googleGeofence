@@ -58,7 +58,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    //[self sendEmail];
+  //  [self sendEmail];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -127,12 +127,13 @@
     
     MCOSMTPSession * smtpSession = [[MCOSMTPSession alloc] init];
     [smtpSession setHostname:@"smtp.gmail.com"];
-    [smtpSession setPort:587];
+    [smtpSession setPort:25];
     [smtpSession setAuthType:MCOAuthTypeXOAuth2];
     [smtpSession setOAuth2Token:[auth accessToken]];
     [smtpSession setUsername:[auth userEmail]];
+    [smtpSession setConnectionType:MCOConnectionTypeStartTLS];
+  
     
-    NSLog(@"%@", [auth accessToken]);
     
     MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
     [[builder header] setFrom:[MCOAddress addressWithDisplayName:@"Test Geofence" mailbox:[auth userEmail]]];
@@ -157,6 +158,8 @@
     }];
 }
 
+
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@", error);
 }
@@ -166,6 +169,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    NSLog(@"Exit region");
     [self sendEmail];
 }
 

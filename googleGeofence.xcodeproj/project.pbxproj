@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FB2CE13183608B900272583 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D931835655A0085DAF8 /* GooglePlus.framework */; };
 		9AF31D4C18355D740085DAF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D4B18355D740085DAF8 /* Foundation.framework */; };
 		9AF31D4E18355D740085DAF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D4D18355D740085DAF8 /* CoreGraphics.framework */; };
 		9AF31D5018355D740085DAF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D4F18355D740085DAF8 /* UIKit.framework */; };
@@ -30,7 +31,6 @@
 		9AF31D8E183564F50085DAF8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D8D183564F50085DAF8 /* Security.framework */; };
 		9AF31D90183565340085DAF8 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9AF31D8F183565340085DAF8 /* GooglePlus.bundle */; };
 		9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D911835653E0085DAF8 /* GoogleOpenSource.framework */; };
-		9AF31D941835655A0085DAF8 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D931835655A0085DAF8 /* GooglePlus.framework */; };
 		9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D95183568450085DAF8 /* SystemConfiguration.framework */; };
 		9AF31D981835747A0085DAF8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31D971835747A0085DAF8 /* MapKit.framework */; };
 		9AF31DAC183585520085DAF8 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF31DA41835851D0085DAF8 /* libMailCore-ios.a */; };
@@ -131,11 +131,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */,
+				6FB2CE13183608B900272583 /* GooglePlus.framework in Frameworks */,
 				9AF31DAE1835855C0085DAF8 /* CFNetwork.framework in Frameworks */,
 				9AF31DAC183585520085DAF8 /* libMailCore-ios.a in Frameworks */,
 				9AF31D981835747A0085DAF8 /* MapKit.framework in Frameworks */,
 				9AF31D96183568450085DAF8 /* SystemConfiguration.framework in Frameworks */,
-				9AF31D921835653E0085DAF8 /* GoogleOpenSource.framework in Frameworks */,
 				9AF31D8E183564F50085DAF8 /* Security.framework in Frameworks */,
 				9AF31D8C183564EB0085DAF8 /* MediaPlayer.framework in Frameworks */,
 				9AF31D8A183564E30085DAF8 /* CoreText.framework in Frameworks */,
@@ -145,7 +146,6 @@
 				9AF31D4E18355D740085DAF8 /* CoreGraphics.framework in Frameworks */,
 				9AF31D5018355D740085DAF8 /* UIKit.framework in Frameworks */,
 				9AF31D4C18355D740085DAF8 /* Foundation.framework in Frameworks */,
-				9AF31D941835655A0085DAF8 /* GooglePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/olyalutsyk/projects/googleGeofence,
+					/Users/ol/iProjects/googleGeofence,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
@@ -580,6 +581,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/olyalutsyk/projects/googleGeofence,
+					/Users/ol/iProjects/googleGeofence,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "googleGeofence/googleGeofence-Prefix.pch";
@@ -666,6 +668,7 @@
 				9AF31D7F18355D740085DAF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9AF31D8018355D740085DAF8 /* Build configuration list for PBXNativeTarget "googleGeofenceTests" */ = {
 			isa = XCConfigurationList;
@@ -674,6 +677,7 @@
 				9AF31D8218355D740085DAF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
