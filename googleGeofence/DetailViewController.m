@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "AppDelegate.h"
 #include <MailCore/MailCore.h>
+#import <MapKit/MapKit.h>
 
 @interface DetailViewController ()
 {
@@ -46,6 +47,7 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
@@ -56,13 +58,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    [self sendEmail];
+    //[self sendEmail];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.hidesBackButton = YES;
     [self addCurrentLocation];
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)map viewForOverlay:(id <MKOverlay>)overlay
+{
+    MKCircleView *circleView = [[MKCircleView alloc] initWithOverlay:overlay];
+    circleView.strokeColor = [UIColor redColor];
+    circleView.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
+    return circleView;
 }
 
 
@@ -73,14 +83,6 @@
     [locationManager startUpdatingLocation];
 }
 
-- (void) checkLocation {
-    if (CLLocationManager.locationServicesEnabled)
-    {
-        [locationManager startUpdatingLocation];
-    }
-    else
-        NSLog(@"Please enable the location Services for this app in Settings");
-}
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -96,13 +98,25 @@
         // Fetch Current Location
         CLLocation *location = [locations objectAtIndex:0];
         // Initialize Region to Monitor
+        CLLocationDistance fenceRadius = 250.0;
+        
         CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:[location coordinate]
-                                                                     radius:5.0
+                                                                     radius:fenceRadius
                                                                  identifier:[[NSUUID UUID] UUIDString]];
         // Start Monitoring Region
         [locationManager startMonitoringForRegion:region];
         [locationManager stopUpdatingLocation];
         // Update Table View
+        
+        MKCoordinateRegion adjustedRegion = [self.map regionThatFits:MKCoordinateRegionMakeWithDistance(location.coordinate, fenceRadius, fenceRadius)];
+        adjustedRegion.span.longitudeDelta  = 0.01;
+        adjustedRegion.span.latitudeDelta  = 0.01;
+        
+        [self.map setRegion:adjustedRegion animated:YES];
+        
+        MKCircle *circle = [MKCircle circleWithCenterCoordinate:location.coordinate radius:fenceRadius];
+        [self.map addOverlay:circle];
+        
         self.geofence = region;
     }
 }
