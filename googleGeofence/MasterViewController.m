@@ -24,6 +24,8 @@ static NSString * const kClientId = @"559691642764.apps.googleusercontent.com";
 {
     [super viewDidLoad];
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
+     _signInButton.colorScheme = kGPPSignInButtonColorSchemeLight;
+ 
     
     
     signIn.shouldFetchGooglePlusUser = YES;
